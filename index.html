@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs -->
+  <meta charset="utf-8">
+  <title>Interactive Vimeo</title>
+
+  <!-- Mobile Specific Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!-- Custom JS -->
+  <script type="text/javascript" src="js/interaction.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/interaction.css">
+
+
+  <style type="text/css">
+    div.clickEffect{
+      position:fixed;
+      box-sizing:border-box;
+      border-style:solid;
+      border-color:#000000;
+      border-radius:50%;
+      animation:clickEffect 0.4s ease-out;
+      z-index:99999;
+    }
+    @keyframes clickEffect{
+      0%{
+        opacity:1;
+        width:0.5em; height:0.5em;
+        margin:-0.25em;
+        border-width:0.5rem;
+      }
+      100%{
+        opacity:0.2;
+        width:15em; height:15em;
+        margin:-7.5em;
+        border-width:0.03rem;
+      }
+    }
+    </style>
+
+    <script type="text/javascript">
+        function clickEffect(e){
+          var d=document.createElement("div");
+          d.className="clickEffect";
+          d.style.top=e.clientY+"px";d.style.left=e.clientX+"px";
+          document.body.appendChild(d);
+          d.addEventListener('animationend',function(){d.parentElement.removeChild(d);}.bind(this));
+        }
+        document.addEventListener('click',clickEffect);
+    </script>
+</head>
+
+
+<body>
+
+
+ <iframe src="https://player.vimeo.com/video/492002363?autoplay=0&title=0&byline=0&portrait=0&controls=1&background=1" style="position:absolute;top:200;left:200;width:50%;height:50%;" frameborder="0" allow="autoplay"></iframe>
+
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script>
+     var iframe = document.querySelector('iframe');
+     var player = new Vimeo.Player(iframe);
+
+    player.on('play', function() {
+      console.log('Played the video');
+    });
+
+    player.getVideoTitle().then(function(title) {
+      console.log('title:', title);
+    });
+  </script>
+
+
+  <div class="playButton"></div> 
+
+
+
+</body>
+</html>
