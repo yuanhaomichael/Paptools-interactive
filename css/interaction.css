@@ -1,23 +1,26 @@
-div.clickEffect{
-  position:fixed;
-  box-sizing:border-box;
-  border-style:solid;
-  border-color:#FFFFFF;
-  border-radius:50%;
-  animation:clickEffect 0.4s ease-out;
-  z-index:99999;
+
+
+
+.container {
+	margin: 20px;
 }
-@keyframes clickEffect{
-  0%{
-    opacity:1;
-    width:0.5em; height:0.5em;
-    margin:-0.25em;
-    border-width:0.5em;
-  }
-  100%{
-    opacity:0.2;
-    width:15em; height:15em;
-    margin:-7.5em;
-    border-width:0.03em;
-  }
+
+.videoArea {
+	position: relative;
+}
+
+.playButton {
+	background-color: rgba(40, 169, 220, 0.3);
+	width: 800px;
+	height: 450px;
+	position: absolute; //important, make the videoArea relative, and the box absolute so they are overlapped
+	top: 60px;
+	left: 82px;
+	pointer-events: auto;
+	cursor: pointer;
+	z-index: 20;
+}
+
+.shopButton {
+
 }
