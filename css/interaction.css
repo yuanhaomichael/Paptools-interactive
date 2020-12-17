@@ -7,7 +7,7 @@
 
 .videoArea {
 	position: relative;
-	width: 33.5%;
+	width: 33.9%;
 	border: 1px solid black;
 }
 
@@ -25,4 +25,41 @@
 
 .shopButton {
 
+}
+
+.loader1 {
+	positon: absolute;
+
+}
+
+@keyframes circle {
+  from {
+    transform: scale(0)
+  }
+  to {
+    transform: scale(1)
+  }
+}
+
+.circle {
+  margin: 0 auto;
+  width: 40px;
+  height: 40px;
+  border: 2px solid CadetBlue;
+  border-radius: 50%;
+  position: absolute;
+  top: 67%;
+  left: 48%;
+}
+
+.one {
+  animation: circle 4s infinite linear;
+}
+
+.two {
+  animation: circle 3s infinite linear;
+}
+
+.three {
+  animation: circle 2s infinite linear;
 }

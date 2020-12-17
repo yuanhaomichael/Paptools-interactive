@@ -61,8 +61,15 @@
 <!-- Video Container -->
 <div class="Container">
   <div class="row videoArea">
-      <div class="playButton"></div>
+      <div class="playButton" id="play" onclick="playDisplayPart()"></div>
       <div class="shopButton"></div>  
+
+      <div class="loader1" id="loader1">
+         <div class="circle one"></div>
+         <div class="circle two"></div>
+         <div class="circle three"></div>
+      </div>
+     
 
       <div id="myVideo" data-vimeo-id="492002363" 
                         data-vimeo-controls="false"
