@@ -57,24 +57,9 @@
 
 
 <body>
-  <iframe src="https://player.vimeo.com/video/492002363" 
-          style="position:absolute;top:200;left:200;width:50%;height:50%;" 
-          frameborder="0" 
-          allow="autoplay">
-  </iframe>
 
- <!-- Vimeo player script and SDK import -->
-    <script src="https://player.vimeo.com/api/player.js"></script>
-    <script>
-      var options = {
-        url: "https://vimeo.com/492002363"
-      };
-      var player = new Vimeo.Player('myVideo', options);
 
-      player.on('play', function() {
-        console.log('Played the video');
-      });
-    </script>
+
 
 
 <!-- Video Container -->
@@ -83,8 +68,23 @@
       <div class="playButton"></div>
       <div class="shopButton"></div> 
 
-      <div class="myVideo"></div>
+      <div id="myVideo" data-vimeo-id="492002363" 
+                        data-vimeo-controls="false"
+                        data-vimeo-autoplay="true"
+                        data-vimeo-width="800"></div>
+       <!-- Vimeo player script and SDK import -->
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script>
+      var options = {
+        id: "492002363",
+        url: "https://vimeo.com/492002363"
+      };
+      var player = new Vimeo.Player('myVideo', options);
 
+      player.on('play', function() {
+        console.log('Played the video');
+      });
+    </script>
      
 
 

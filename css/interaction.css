@@ -15,7 +15,7 @@
 	height: 450px;
 	position: absolute; //important, make the videoArea relative, and the box absolute so they are overlapped
 	top: 60px;
-	left: 82px;
+	left: 0px;
 	pointer-events: auto;
 	cursor: pointer;
 	z-index: 20;
