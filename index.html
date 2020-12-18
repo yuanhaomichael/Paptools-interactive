@@ -196,25 +196,37 @@
          document.getElementById("play").style.display = "inline";
          document.getElementById("shop").style.display = "none";       
       });
-
-
+      
+      var jumpSecond = 34;
+      var playButtonClicked = false;
+      
+      
       //play button
+      
+
       function playDisplayPart() {
         playButtonClicked = true;
         document.getElementById("loading").style.display = "inline";
+        console.log("show loading", playButtonClicked)
         player.setCurrentTime(jumpSecond);
         document.getElementById("play").style.display = "none";
       }
 
-      var jumpSecond = 34;
-      var playButtonClicked = false;
-      player.on('timeupdate', function(data){
-        if(data.seconds == jumpSecond && playButtonClicked == true){
-          console.log("reached jump point")
+      var jumpToShopping =  function(data){
+        if(data.seconds >= jumpSecond && playButtonClicked == true){
+          // console.log("reached jump point")
           document.getElementById("loading").style.display = "none";
+          // console.log("hide loading")
           playButtonClicked = false;
         }
-      })
+      };
+      player.on('timeupdate',jumpToShopping);
+
+      // player.on('timeupdate', function(data){
+      //   console.log(Math.round(data.seconds))
+      // })
+
+
 
       var reAppear = function(data){
         if(Math.round(data.seconds)>=60){
