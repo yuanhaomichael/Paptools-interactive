@@ -71,7 +71,8 @@
                         data-vimeo-id="492002363"
                         data-vimeo-muted="false"
                         data-vimeo-controls="false"
-                        data-vimeo-background="true">
+                        data-vimeo-background="true"
+                        data-vimeo-loop="true">
                              <!-- how to get play button to hide after 30 second -->
                              <!-- how to show a loader after play button is clicked -->
                              <div class="playButton" id="play" onclick="playDisplayPart()"></div>
@@ -180,15 +181,16 @@
       document.getElementById("shop").style.display = "none";
 
       var onPlay = function(data) {
-         document.getElementById("loader1").style.display = "inline"; 
-         document.getElementById("play").style.display = "inline";
-         document.getElementById("shop").style.display = "none";
+         
       };
 
       player.on('bufferend', onPlay);
 
       player.on('play', function() {
-        console.log('Played the video');           
+        console.log('Played the video');    
+        document.getElementById("loader1").style.display = "inline"; 
+         document.getElementById("play").style.display = "inline";
+         document.getElementById("shop").style.display = "none";       
       });
 
       //play button
@@ -196,6 +198,14 @@
         player.setCurrentTime(30.456);
         document.getElementById("play").style.display = "none";
       }
+
+      var reAppear = function(data){
+        if(Math.round(data.seconds)>=60){
+          document.getElementById("loader1").style.display = "inline";
+          document.getElementById("play").style.display = "inline";
+        }
+      }
+      player.on('timeupdate', reAppear);
 
       var hide1 = function(data){
         if(Math.round(data.seconds)>=30){
