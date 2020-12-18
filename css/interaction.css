@@ -68,3 +68,9 @@
 .three {
   animation: circle 2s infinite linear;
 }
+
+.carousel{
+  display: none;
+  position: absolute;
+  z-index: 30;
+}
