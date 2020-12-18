@@ -37,6 +37,32 @@
   display: none;
 }
 
+button {
+  background-color: black;
+  color: white !important;
+  border-radius: 0 !important;
+}
+
+h1, h2, p {
+  position: absolute;
+  width: 50%;
+  margin-left: 50%;
+}
+
+h1 {
+  margin-top: 8%;
+}
+
+h2 {
+  margin-top: 16%;
+}
+
+p {
+  margin-top: 22%
+}
+
+
+
 @keyframes circle {
   from {
     transform: scale(0)

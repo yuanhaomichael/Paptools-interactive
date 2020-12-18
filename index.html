@@ -93,17 +93,59 @@
                                 </ol>
                             
                                 <!-- Wrapper for slides -->
-                                <div class="carousel-inner">
+                                <div class="carousel-inner" style="position: relative">
                                   <div class="item active">
-                                    <img src="images/tyre.png" alt="" style="width:100%;">
+                                    <h1>Wheels</h1>
+                                    <h2>€15.90</h2>
+                                    <p>This is the items descirption of the Wheels tools which
+                                    is a great tool for construction.</p>
+                                    <img src="images/wheel.png" id="shopImg" 
+                                    style="width: 50%; position: absolute;">
+                                    <button type="button" class="btn btn-dark" 
+                                    style="position: absolute;
+                                           margin-left: 50%;
+                                           margin-top: 30%">Προσθήκη στο Καλάθι</button>
+                                    <button type="button" class="btn btn-dark" 
+                                    style="position: absolute;
+                                           margin-left: 50%;
+                                           margin-top: 36%" onclick="playAgain()">Return to video</button>
+                                    <img src="images/rec.png" alt="" style="width:100%;">
                                   </div>
                             
                                   <div class="item">
-                                    <img src="images/tyre2.png" alt="Chicago" style="width:100%;">
+                                    <h1>Wheels</h1>
+                                    <h2>€15.90</h2>
+                                    <p>This is the items descirption of the Wheels tools which
+                                    is a great tool for construction.</p>
+                                    <img src="images/wheel.png" id="shopImg" 
+                                    style="width: 50%; position: absolute;">
+                                    <button type="button" class="btn btn-dark" 
+                                    style="position: absolute;
+                                           margin-left: 50%;
+                                           margin-top: 30%">Προσθήκη στο Καλάθι</button>
+                                    <button type="button" class="btn btn-dark" 
+                                    style="position: absolute;
+                                           margin-left: 50%;
+                                           margin-top: 36%" onclick="playAgain()">Return to video</button>
+                                    <img src="images/rec.png" alt="Chicago" style="width:100%;">
                                   </div>
                                 
                                   <div class="item">
-                                    <img src="images/tyre3.png" alt="New york" style="width:100%;">
+                                    <h1>Wheels</h1>
+                                    <h2>€15.90</h2>
+                                    <p>This is the items descirption of the Wheels tools which
+                                    is a great tool for construction.</p>
+                                    <img src="images/wheel.png" id="shopImg" 
+                                    style="width: 50%; position: absolute;">
+                                    <button type="button" class="btn btn-dark" 
+                                    style="position: absolute;
+                                           margin-left: 50%;
+                                           margin-top: 30%">Προσθήκη στο Καλάθι</button>
+                                    <button type="button" class="btn btn-dark" 
+                                    style="position: absolute;
+                                           margin-left: 50%;
+                                           margin-top: 36%" onclick="playAgain()">Return to video</button>
+                                    <img src="images/rec.png" alt="New york" style="width:100%;">
                                   </div>
                                 </div>
                             
@@ -132,6 +174,11 @@
       };
       var player = new Vimeo.Player('myVideo', options);
       player.setVolume(5);
+
+      document.getElementById("loader1").style.display = "none"; 
+      document.getElementById("play").style.display = "none"; 
+      document.getElementById("shop").style.display = "none";
+
       var onPlay = function(data) {
          document.getElementById("loader1").style.display = "inline"; 
          document.getElementById("play").style.display = "inline";
@@ -150,12 +197,8 @@
         document.getElementById("play").style.display = "none";
       }
 
-      function displayCarousel() {
-        document.getElementById("Carousel").style.display = "inline";
-      }
-
       var hide1 = function(data){
-        if(Math.round(data.seconds)===30){
+        if(Math.round(data.seconds)>=30){
           document.getElementById("loader1").style.display = "none";
           document.getElementById("play").style.display = "none";
         }
@@ -163,15 +206,28 @@
       player.on('timeupdate', hide1);
 
       //shop button
+      function displayCarousel() {
+        player.pause();
+        document.getElementById("Carousel").style.display = "inline";
+      }
+
       var hide2 = function(data){
-        if(Math.round(data.seconds)<=30){
+        if(Math.round(data.seconds)<=33){
           document.getElementById("shop").style.display = "none";
         }
-        if(Math.round(data.seconds)>30){
+        if(Math.round(data.seconds)>33){
           document.getElementById("shop").style.display = "inline";
         }
       }
       player.on('timeupdate', hide2);
+
+
+      //play 
+      function playAgain(){
+        document.getElementById("Carousel").style.display = "none";
+        player.play();
+      }
+   
 
     </script>
      
