@@ -61,17 +61,18 @@
 <!-- Video Container -->
 <div class="Container">
      
-      <div class="shopButton"></div> 
+      
      
 
       <div id="myVideo" class="videoArea" 
-                        data-vimeo-id="492002363" 
+                        data-vimeo-id="492002363"
+                        data-vimeo-muted="false"
                         data-vimeo-controls="false"
-                        data-vimeo-autoplay="true"
                         data-vimeo-background="true">
                              <!-- how to get play button to hide after 30 second -->
                              <!-- how to show a loader after play button is clicked -->
                              <div class="playButton" id="play" onclick="playDisplayPart()"></div>
+                             <div class="shopButton" id="shop"></div> 
                              <div class="loader1" id="loader1">
                                  <div class="circle one"></div>
                                  <div class="circle two"></div>
@@ -84,14 +85,17 @@
        <!-- Vimeo player script and SDK import -->
     <script src="https://player.vimeo.com/api/player.js"></script>
     <script>
+      //player setup
       var options = {
         id: "492002363",
         url: "https://vimeo.com/492002363"
       };
       var player = new Vimeo.Player('myVideo', options);
-
+      player.setVolume(5);
       var onPlay = function(data) {
          document.getElementById("loader1").style.display = "inline";
+         document.getElementById("play").style.display = "inline";
+         document.getElementById("shop").style.display = "none";
       };
 
       player.on('bufferend', onPlay);
@@ -99,21 +103,31 @@
       player.on('play', function() {
         console.log('Played the video');           
       });
-     
+
+      //play button
       function playDisplayPart() {
         player.setCurrentTime(30.456);
         document.getElementById("play").style.display = "none";
       }
 
-      var loaderHide = function(data){
+      var hide1 = function(data){
         if(Math.round(data.seconds)===30){
           document.getElementById("loader1").style.display = "none";
           document.getElementById("play").style.display = "none";
         }
       }
-      player.on('timeupdate', loaderHide);
+      player.on('timeupdate', hide1);
 
-      
+      //shop button
+      var hide2 = function(data){
+        if(Math.round(data.seconds)<=30){
+          document.getElementById("shop").style.display = "none";
+        }
+        if(Math.round(data.seconds)>30){
+          document.getElementById("shop").style.display = "inline";
+        }
+      }
+      player.on('timeupdate', hide2);
 
     </script>
      

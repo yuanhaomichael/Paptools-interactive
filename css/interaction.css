@@ -21,7 +21,15 @@
 }
 
 .shopButton {
-
+  background-color: rgba(190, 19, 22, 0.3);
+  width: 100%;
+  height: 100%;
+  position: absolute; //important, make the videoArea relative, and the box absolute so they are overlapped
+  top:  0px;
+  left: 0px;
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: 20;
 }
 
 .loader1 {
