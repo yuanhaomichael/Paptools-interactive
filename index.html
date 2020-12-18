@@ -83,6 +83,10 @@
                                  <div class="circle three"></div>
                               </div>
 
+                              <!-- loading screen -->
+                              <div id="loading" class="loading">
+                                <img src="images/loading.png">
+                              </div>
                              <!-- pop up slideshow experience -->
                             
                               <div id="Carousel" class="carousel slide" data-ride="carousel">
@@ -192,11 +196,24 @@
          document.getElementById("play").style.display = "inline";
          document.getElementById("shop").style.display = "none";       
       });
+      var jumpSecond = 33;
+      var playButtonClicked = false;
+      player.on('timeupdate', function(data){
+        if(data.seconds == jumpSecond && playButtonClicked == true){
+          console.log("reached jump point")
+          document.getElementById("loading").style.display = "none";
+          playButtonClicked = false;
+        }
+      })
+
 
       //play button
       function playDisplayPart() {
-        player.setCurrentTime(30.456);
+        playButtonClicked = true;
+        document.getElementById("loading").style.display = "inline";
+        player.setCurrentTime(jumpSecond);
         document.getElementById("play").style.display = "none";
+        
       }
 
       var reAppear = function(data){

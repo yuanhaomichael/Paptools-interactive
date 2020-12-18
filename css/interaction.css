@@ -100,3 +100,8 @@ p {
   position: absolute;
   z-index: 30;
 }
+
+.loading{
+  display: none;
+  position: absolute;
+}
