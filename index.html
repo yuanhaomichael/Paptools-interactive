@@ -97,11 +97,24 @@
       player.on('bufferend', onPlay);
 
       player.on('play', function() {
-        console.log('Played the video');              
+        console.log('Played the video');           
       });
-      if(player.getCurrentTime() > 3){
-        console.log("3");
+     
+      function playDisplayPart() {
+        player.setCurrentTime(30.456);
+        document.getElementById("play").style.display = "none";
       }
+
+      var loaderHide = function(data){
+        if(Math.round(data.seconds)===30){
+          document.getElementById("loader1").style.display = "none";
+          document.getElementById("play").style.display = "none";
+        }
+      }
+      player.on('timeupdate', loaderHide);
+
+      
+
     </script>
      
 
