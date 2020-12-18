@@ -9,7 +9,7 @@
 }
 
 .playButton {
-	background-color: rgba(40, 169, 220, 0.3);
+	background-color: rgba(40, 169, 220, 0);
 	width: 100%;
 	height: 100%;
 	position: absolute; //important, make the videoArea relative, and the box absolute so they are overlapped
@@ -21,7 +21,7 @@
 }
 
 .shopButton {
-  background-color: rgba(190, 19, 22, 0.3);
+  background-color: rgba(190, 19, 22, 0);
   width: 100%;
   height: 100%;
   position: absolute; //important, make the videoArea relative, and the box absolute so they are overlapped
