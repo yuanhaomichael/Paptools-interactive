@@ -84,8 +84,8 @@
                               </div>
 
                               <!-- loading screen -->
-                              <div id="loading" class="loading">
-                                <img src="images/loading.png">
+                              <div id="loading" class="loading" style="">
+                                <p style="color: white; margin-left: 45%">Loading...</p>
                               </div>
                              <!-- pop up slideshow experience -->
                             
@@ -196,15 +196,6 @@
          document.getElementById("play").style.display = "inline";
          document.getElementById("shop").style.display = "none";       
       });
-      var jumpSecond = 33;
-      var playButtonClicked = false;
-      player.on('timeupdate', function(data){
-        if(data.seconds == jumpSecond && playButtonClicked == true){
-          console.log("reached jump point")
-          document.getElementById("loading").style.display = "none";
-          playButtonClicked = false;
-        }
-      })
 
 
       //play button
@@ -213,8 +204,17 @@
         document.getElementById("loading").style.display = "inline";
         player.setCurrentTime(jumpSecond);
         document.getElementById("play").style.display = "none";
-        
       }
+
+      var jumpSecond = 34;
+      var playButtonClicked = false;
+      player.on('timeupdate', function(data){
+        if(data.seconds == jumpSecond && playButtonClicked == true){
+          console.log("reached jump point")
+          document.getElementById("loading").style.display = "none";
+          playButtonClicked = false;
+        }
+      })
 
       var reAppear = function(data){
         if(Math.round(data.seconds)>=60){
