@@ -1,14 +1,11 @@
-
-
-
 .container {
 	margin: 20px;
 }
 
 .videoArea {
 	position: relative;
-	width: 33.9%;
 	border: 1px solid black;
+  display: inline-flex;
 }
 
 .playButton {
@@ -29,7 +26,7 @@
 
 .loader1 {
 	positon: absolute;
-
+  display: none;
 }
 
 @keyframes circle {

@@ -60,22 +60,26 @@
 
 <!-- Video Container -->
 <div class="Container">
-  <div class="row videoArea">
-      <div class="playButton" id="play" onclick="playDisplayPart()"></div>
-      <div class="shopButton"></div>  
-
-      <div class="loader1" id="loader1">
-         <div class="circle one"></div>
-         <div class="circle two"></div>
-         <div class="circle three"></div>
-      </div>
+     
+      <div class="shopButton"></div> 
      
 
-      <div id="myVideo" data-vimeo-id="492002363" 
+      <div id="myVideo" class="videoArea" 
+                        data-vimeo-id="492002363" 
                         data-vimeo-controls="false"
                         data-vimeo-autoplay="true"
-                        data-vimeo-background="true"
-                        ></div>
+                        data-vimeo-background="true">
+                             <!-- how to get play button to hide after 30 second -->
+                             <!-- how to show a loader after play button is clicked -->
+                             <div class="playButton" id="play" onclick="playDisplayPart()"></div>
+                             <div class="loader1" id="loader1">
+                                 <div class="circle one"></div>
+                                 <div class="circle two"></div>
+                                 <div class="circle three"></div>
+                              </div>
+                        </div>
+
+
       
        <!-- Vimeo player script and SDK import -->
     <script src="https://player.vimeo.com/api/player.js"></script>
@@ -86,9 +90,18 @@
       };
       var player = new Vimeo.Player('myVideo', options);
 
+      var onPlay = function(data) {
+         document.getElementById("loader1").style.display = "inline";
+      };
+
+      player.on('bufferend', onPlay);
+
       player.on('play', function() {
-        console.log('Played the video');
+        console.log('Played the video');              
       });
+      if(player.getCurrentTime() > 3){
+        console.log("3");
+      }
     </script>
      
 
@@ -96,7 +109,7 @@
       <!-- pop up slideshow experience -->
       <div class="slideshow"></div>
 
-  </div>
+
 </div>
 
 
