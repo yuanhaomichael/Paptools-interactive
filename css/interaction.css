@@ -1,10 +1,10 @@
-.container {
-	margin: 20px;
+.Container {
+  width: 100%;
+  height: auto;
 }
 
 .videoArea {
 	position: relative;
-	border: 1px solid black;
   display: inline-flex;
 }
 
@@ -44,23 +44,23 @@ button {
   border-radius: 0 !important;
 }
 
-h1, h2, p {
+h5, h4, p {
   transform: scale(0.7);
   position: absolute;
   width: 50%;
   margin-left: 50%;
 }
 
-h1 {
-  margin-top: 8%;
+h4 {
+  margin-top: 5%;
 }
 
-h2 {
-  margin-top: 16%;
+h5 {
+  margin-top: 22%;
 }
 
 p {
-  margin-top: 22%
+  margin-top: 24%
 }
 
 
@@ -96,12 +96,23 @@ p {
   animation: circle 2s infinite linear;
 }
 
+/* styling Carousel */
 .carousel{
   display: none;
   position: absolute;
   z-index: 30;
 }
+.carousel-indicators {
+  bottom: 5px;
+}
+ol.carousel-indicators li, ol.carousel-indicators li.active {
+  /* width: 5px;
+  height: 5px; */
+  transform: scale(0.6);
+}
 
+
+/* loading screen */
 .loading{
   display: none;
   position: absolute;
@@ -114,6 +125,7 @@ p {
   z-index: 20;
 }
 
+/* Jump button */
 .jumpToButton{
   color: whitesmoke;
   text-shadow: 1px 1px 2px black;

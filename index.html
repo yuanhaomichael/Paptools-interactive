@@ -7,19 +7,20 @@
   <title>Interactive Vimeo</title>
 
   <!-- Mobile Specific Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   
   <!-- Boostrap  -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
   <!-- Custom JS -->
   <script type="text/javascript" src="js/interaction.js"></script>
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/interaction.css">
 
-
+<!-- Click Effect -->
   <style type="text/css">
     div.clickEffect{
       position:fixed;
@@ -63,11 +64,8 @@
 
 <!-- Video Container -->
 <div class="Container">
-     
-      
-    
-
-      <div id="myVideo" class="videoArea" 
+  <div class="embed-responsive embed-responsive-16by9">
+  <div id="myVideo" class="videoArea embed-responsive-item" 
                         data-vimeo-id="494338777"
                         data-vimeo-muted="false"
                         data-vimeo-controls="false"
@@ -78,24 +76,24 @@
                              <div class="playButton" id="play" onclick="playDisplayPart()"></div>
                              <!-- shop button function in JQuery -->
                              <div class="shopButton" id="shop"></div> 
-                             <div class="loader1" id="loader1" style="top:68%; left: 49%;">
+                             <div class="loader1" id="loader1" style="top:68%; left: 46%;">
                                  <div class="circle one"></div>
                                  <div class="circle two"></div>
                                  <div class="circle three"></div>
                               </div>
                               <!-- Button for jump between Products -->
-                              <div class="jumpToRipple" id="jumpRipple" onclick="privousProduct()" style="top: 10%;left:10%;transform: scale(0.6);">
+                              <div class="jumpToRipple" id="jumpRipple" onclick="privousProduct()" style="top:9.5%;left:16%;transform: scale(0.6);">
                                 <div class="circle one"></div><div class="circle two"></div><div class="circle three"></div>
                               </div>
-                              <div class = "jumpToButton" id="previous" style="top: 6.5%;left: 3%;" onclick="previousProduct()">View<br/>Prev</div>
+                              <div class = "jumpToButton" id="previous" style="top: 7.25%;left: 2%;" onclick="previousProduct()">Προηγούμενος</div>
 
-                              <div class="jumpToRipple" id="jumpRipple" onclick="nextProduct()" style="top: 10%;left:88%; transform: scale(0.6);">
+                              <div class="jumpToRipple" id="jumpRipple" onclick="nextProduct()" style="top:9.5%;left:88%; transform: scale(0.6);">
                                 <div class="circle one"></div><div class="circle two"></div><div class="circle three"></div>
                               </div>
-                              <div class = "jumpToButton" id="next" style="top: 6.5%;left: 90%;" onclick="nextProduct()">View<br/>Next</div>
+                              <div class = "jumpToButton" id="next" style="top: 7.5%;left: 89.5%;" onclick="nextProduct()">Επόμενο</div>
                               <!-- loading screen -->
                               <div id="loading" class="loading">
-                                <p style="color: white; margin-left: 42.5%">Loading...</p>
+                                <p style="color: white; margin-left: 40%">Loading...</p>
                               </div>
                              <!-- pop up slideshow experience -->
                             
@@ -116,138 +114,138 @@
                                 <div class="carousel-inner" style="position: relative">
                                   <!-- 0 -->
                                   <div class="item active">
-                                    <h1>PVC Boots</h1>
-                                    <h2>€10,4</h2>
+                                    <h4>Αδιάβροχη γαλότσα εργασίας Dunlop κνήμης (κοντή)</h4>
+                                    <h5>€10,4</h5>
                                     <p>Αδιάβροχες γαλότσες υψηλής ποιότητας για απαιτητικές αγροτικές εργασίες</p>
                                     <img src="images/PVC-boots.png" id="shopImg" 
                                     style="width: 50%; position: absolute;">
                                     <button type="button" class="btn btn-dark" 
                                     style="position: absolute;
-                                           margin-left: 48.25%;
+                                           margin-left: 49.8%;
                                            margin-top: 34.5%">Προσθήκη στο Καλάθι</button>
                                     <button type="button" class="btn btn-dark" 
                                     style="position: absolute;
                                            margin-left: 50%;
-                                           margin-top: 40%" onclick="playAgain()">Return to video</button>
+                                           margin-top: 40%" onclick="playAgain()">επιστροφή στο βίντεο</button>
                                     <img src="images/rec.png" alt="" style="width:100%;">
                                   </div>
                                   <!-- 1 -->
                                   <div class="item">
-                                    <h1>Chainsaw</h1>
-                                    <h2>€107,55</h2>
+                                    <h4>Αλυσοπρίονο βενζίνης Einhell 2χρονο - με αλυσίδα & λάμα Oregon 35cm</h4>
+                                    <h5>€107,55</h5>
                                     <p>Με αντικραδασμικό σύστημα & φρένο αλυσίδας</p>
                                     <img src="images/Chainsaw.png" id="shopImg" 
                                     style="width: 50%; position: absolute;">
                                     <button type="button" class="btn btn-dark" 
                                     style="position: absolute;
-                                           margin-left: 48.25%;
+                                           margin-left: 49.8%;
                                            margin-top: 34.5%">Προσθήκη στο Καλάθι</button>
                                     <button type="button" class="btn btn-dark" 
                                     style="position: absolute;
                                            margin-left: 50%;
-                                           margin-top: 40%" onclick="playAgain()">Return to video</button>
+                                           margin-top: 40%" onclick="playAgain()">επιστροφή στο βίντεο</button>
                                     <img src="images/rec.png" alt="" style="width:100%;">
                                   </div>
                                   <!-- 2 -->
                                   <div class="item">
-                                    <h1>Grinder</h1>
-                                    <h2>€31,95</h2>
+                                    <h4>Ηλεκτρικός γωνιακός τροχός Einhell διαμέτρου 125mm 850 Watt</h4>
+                                    <h5>€31,95</h5>
                                     <p>Με 2 χρόνια εγγύηση</p>
                                     <img src="images/angle-grinder.png" id="shopImg" 
                                     style="width: 50%; position: absolute;">
                                     <button type="button" class="btn btn-dark" 
                                     style="position: absolute;
-                                           margin-left: 48.25%;
+                                           margin-left: 49.8%;
                                            margin-top: 34.5%">Προσθήκη στο Καλάθι</button>
                                     <button type="button" class="btn btn-dark" 
                                     style="position: absolute;
                                            margin-left: 50%;
-                                           margin-top: 40%" onclick="playAgain()">Return to video</button>
+                                           margin-top: 40%" onclick="playAgain()">επιστροφή στο βίντεο</button>
                                     <img src="images/rec.png" alt="" style="width:100%;">
                                   </div>
                                   <!-- 3 -->
                                   <div class="item">
-                                    <h1>Lubricant</h1>
-                                    <h2>€3,5</h2>
+                                    <h4>Λιπαντικό - αντισκωριακό γενικής χρήσης Q20</h4>
+                                    <h5>€3,5</h5>
                                     <p>Προλαμβάνει τη σκουριά & απομακρύνει την υγρασία</p>
                                     <img src="images/Lubricant-Q20.png" id="shopImg" 
                                     style="width: 50%; position: absolute;">
                                     <button type="button" class="btn btn-dark" 
                                     style="position: absolute;
-                                           margin-left: 48.25%;
+                                           margin-left: 49.8%;
                                            margin-top: 34.5%">Προσθήκη στο Καλάθι</button>
                                     <button type="button" class="btn btn-dark" 
                                     style="position: absolute;
                                            margin-left: 50%;
-                                           margin-top: 40%" onclick="playAgain()">Return to video</button>
+                                           margin-top: 40%" onclick="playAgain()">επιστροφή στο βίντεο</button>
                                     <img src="images/rec.png" alt="" style="width:100%;">
                                   </div>
                                   <!-- 4 -->
                                   <div class="item">
-                                    <h1>Axes</h1>
-                                    <h2>€22,5</h2>
+                                    <h4>Επαγγελματική τσεκουροβαριά Harden με λαβή fiberglass 90cm</h4>
+                                    <h5>€22,5</h5>
                                     <p>Ιδανική για σχίσιμο των ξύλων</p>
                                     <img src="images/axes.png" id="shopImg" 
                                     style="width: 50%; position: absolute;">
                                     <button type="button" class="btn btn-dark" 
                                     style="position: absolute;
-                                           margin-left: 48.25%;
+                                           margin-left: 49.8%;
                                            margin-top: 34.5%">Προσθήκη στο Καλάθι</button>
                                     <button type="button" class="btn btn-dark" 
                                     style="position: absolute;
                                            margin-left: 50%;
-                                           margin-top: 40%" onclick="playAgain()">Return to video</button>
+                                           margin-top: 40%" onclick="playAgain()">επιστροφή στο βίντεο</button>
                                     <img src="images/rec.png" alt="" style="width:100%;">
                                   </div>
                                   <!-- 5 -->
                                   <div class="item">
-                                    <h1>Warm Air</h1>
-                                    <h2>€98,5</h2>
+                                    <h4>Γεννήτρια παραγωγής θερμού αέρα HGG Einhell</h4>
+                                    <h5>€98,5</h5>
                                     <p>Με βαλβίδα υγραερίου & ανοξείδωτο περίβλημα</p>
                                     <img src="images/Warm-air-generator.png" id="shopImg" 
                                     style="width: 50%; position: absolute;">
                                     <button type="button" class="btn btn-dark" 
                                     style="position: absolute;
-                                           margin-left: 48.25%;
+                                           margin-left: 49.8%;
                                            margin-top: 34.5%">Προσθήκη στο Καλάθι</button>
                                     <button type="button" class="btn btn-dark" 
                                     style="position: absolute;
                                            margin-left: 50%;
-                                           margin-top: 40%" onclick="playAgain()">Return to video</button>
+                                           margin-top: 40%" onclick="playAgain()">επιστροφή στο βίντεο</button>
                                     <img src="images/rec.png" alt="" style="width:100%;">
                                   </div>
                                   <!-- 6 -->
                                   <div class="item">
-                                    <h1>Scale</h1>
-                                    <h2>€47,9</h2>
+                                    <h4>Επαγγελματική ζυγαριά δαπέδου - πλάστιγγα 150kg</h4>
+                                    <h5>€47,9</h5>
                                     <p>Λειτουργεί με ρεύμα & με μπαταρία</p>
                                     <img src="images/Scale.png" id="shopImg" 
                                     style="width: 50%; position: absolute;">
                                     <button type="button" class="btn btn-dark" 
                                     style="position: absolute;
-                                           margin-left: 48.25%;
+                                           margin-left: 49.8%;
                                            margin-top: 34.5%">Προσθήκη στο Καλάθι</button>
                                     <button type="button" class="btn btn-dark" 
                                     style="position: absolute;
                                            margin-left: 50%;
-                                           margin-top: 40%" onclick="playAgain()">Return to video</button>
+                                           margin-top: 40%" onclick="playAgain()">επιστροφή στο βίντεο</button>
                                     <img src="images/rec.png" alt="" style="width:100%;">
                                   </div>
                                   <!-- 7 -->
                                   <div class="item">
-                                    <h1>Hammer Drill</h1>
-                                    <h2>€33,9</h2>
+                                    <h4>Ηλεκτρικό κρουστικό δράπανο Einhell TC-ID/1E 720Watt</h4>
+                                    <h5>€33,9</h5>
                                     <p>Δύο χρόνια εγγύηση</p>
                                     <img src="images/Hammer-Drill.png" id="shopImg" 
                                     style="width: 50%; position: absolute;">
                                     <button type="button" class="btn btn-dark" 
                                     style="position: absolute;
-                                           margin-left: 48.25%;
+                                           margin-left: 49.8%;
                                            margin-top: 34.5%">Προσθήκη στο Καλάθι</button>
                                     <button type="button" class="btn btn-dark" 
                                     style="position: absolute;
                                            margin-left: 50%;
-                                           margin-top: 40%" onclick="playAgain()">Return to video</button>
+                                           margin-top: 40%" onclick="playAgain()">επιστροφή στο βίντεο</button>
                                     <img src="images/rec.png" alt="" style="width:100%;">
                                   </div>
                                 <!-- Left and right controls -->
@@ -262,7 +260,7 @@
                               </div>
                               
                         </div>
-
+    </div>
 
       
        <!-- Vimeo player script and SDK import -->
@@ -281,16 +279,15 @@
       document.getElementById("shop").style.display = "none";
 
       var onPlay = function(data) {
-         
       };
 
       player.on('bufferend', onPlay);
 
       player.on('play', function() {
-        // console.log('Played the video');  
+        // console.log('Played the video');
         document.getElementById("loader1").style.display = "inline"; 
-         document.getElementById("play").style.display = "inline";
-         document.getElementById("shop").style.display = "none";
+        document.getElementById("play").style.display = "inline";
+        document.getElementById("shop").style.display = "none";
       });
       
       var jumpSecond =  new Array(34, 37, 40, 43, 46, 49, 52, 55);
@@ -298,7 +295,13 @@
       var prevButtonClicked = false;
       var nextButtonClicked = false;
       var currentAt = -1;
-      
+      var videoLength = 10000000;
+
+      // player.getDuration().then(function(duration) {
+      //   // `duration` indicates the duration of the video in seconds
+      //   videoLength = duration;
+      // });
+
       //play button
       function playDisplayPart() {
         playButtonClicked = true;
@@ -317,6 +320,17 @@
           showAllJumpButton();
           document.getElementById("shop").style.display = "inline";
         }
+
+        if(data.seconds >= jumpSecond[0] && loop == true){
+          // console.log("reached jump point")
+          document.getElementById("loading").style.display = "none";
+          // console.log("hide loading")
+          loop = false;
+          showAllJumpButton();
+          document.getElementById("shop").style.display = "inline";
+        }
+
+
       };
       player.on('timeupdate',jumpToShopping);
 
@@ -324,12 +338,17 @@
       //   console.log(Math.round(data.seconds))
       // })
 
+      // loop after ended
+      var loop = false;
+      var videoLength = 60;
       var reAppear = function(data){
-        if(Math.round(data.seconds)>=60){
-          document.getElementById("loader1").style.display = "inline";
-          document.getElementById("play").style.display = "inline";
-          document.getElementById("shop").style.display = "none";
-          hideAllJumpButton();
+        if(Math.round(data.seconds)>= videoLength){
+          loop = true;
+          player.setCurrentTime(jumpSecond[0]);
+          data.seconds = jumpSecond[0];
+          // document.getElementById("loading").style.display = "inline";
+          // currentAt = 0;
+          playDisplayPart();
         }
       }
       player.on('timeupdate', reAppear);
@@ -359,9 +378,9 @@
           player.pause();
           player.getCurrentTime().then(function(seconds) {
           var index = getTimeIndex(jumpSecond, seconds);
-          // console.log(typeof index)
+          // currentAt = index;
           $("#Carousel").carousel(index);
-          // if(index == 7){$("#Carousel").carousel(7)}
+          
         });
         document.getElementById("Carousel").style.display = "inline";
         hideAllJumpButton();
@@ -369,10 +388,12 @@
       })
 
 
-      //return to video from carousel
+      //επιστροφή στο βίντεο from carousel
       function playAgain(){
         document.getElementById("Carousel").style.display = "none";
         showAllJumpButton();
+        // player.setCurrentTime(jumpSecond[currentAt]);
+        // document.getElementById("loading").style.display = "inline";
         player.play();
       }
    
@@ -428,6 +449,11 @@
           document.getElementById("loading").style.display = "none";
           prevButtonClicked = false;
         }
+        if(loop == true && data.seconds == jumpSecond[0]){
+          document.getElementById("loading").style.display = "none";
+          loop = false;
+        }
+
       }
       player.on('timeupdate', listenForJump);
 
