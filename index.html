@@ -20,33 +20,7 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/interaction.css">
 
-<!-- Click Effect -->
-  <style type="text/css">
-    div.clickEffect{
-      position:fixed;
-      box-sizing:border-box;
-      border-style:solid;
-      border-color:#000000;
-      border-radius:50%;
-      animation:clickEffect 0.4s ease-out;
-      z-index:99999;
-    }
-    @keyframes clickEffect{
-      0%{
-        opacity:1;
-        width:0.5em; height:0.5em;
-        margin:-0.25em;
-        border-width:0.5rem;
-      }
-      100%{
-        opacity:0.2;
-        width:15em; height:15em;
-        margin:-7.5em;
-        border-width:0.03rem;
-      }
-    }
-    </style>
-
+  <!-- Click Effects Script -->
     <script type="text/javascript">
         function clickEffect(e){
           var d=document.createElement("div");
@@ -58,7 +32,6 @@
         document.addEventListener('click',clickEffect);
     </script>
 </head>
-
 
 <body>
 
@@ -76,7 +49,7 @@
                              <div class="playButton" id="play" onclick="playDisplayPart()"></div>
                              <!-- shop button function in JQuery -->
                              <div class="shopButton" id="shop"></div> 
-                             <div class="loader1" id="loader1" style="top:68%; left: 46%;">
+                             <div class="loader1" id="loader1" style="top:69%; left: 47%;">
                                  <div class="circle one"></div>
                                  <div class="circle two"></div>
                                  <div class="circle three"></div>
@@ -85,12 +58,12 @@
                               <div class="jumpToRipple" id="jumpRipple" onclick="privousProduct()" style="top:9.5%;left:16%;transform: scale(0.6);">
                                 <div class="circle one"></div><div class="circle two"></div><div class="circle three"></div>
                               </div>
-                              <div class = "jumpToButton" id="previous" style="top: 7.25%;left: 2%;" onclick="previousProduct()">Προηγούμενος</div>
+                              <div class = "jumpToButton" id="previous" style="top: 7.0%;left: 1.4%;" onclick="previousProduct()">Προηγούμενος</div>
 
                               <div class="jumpToRipple" id="jumpRipple" onclick="nextProduct()" style="top:9.5%;left:88%; transform: scale(0.6);">
                                 <div class="circle one"></div><div class="circle two"></div><div class="circle three"></div>
                               </div>
-                              <div class = "jumpToButton" id="next" style="top: 7.5%;left: 89.5%;" onclick="nextProduct()">Επόμενο</div>
+                              <div class = "jumpToButton" id="next" style="top: 7.0%;left: 89.1%;" onclick="nextProduct()">Επόμενο</div>
                               <!-- loading screen -->
                               <div id="loading" class="loading">
                                 <p style="color: white; margin-left: 40%">Loading...</p>
@@ -119,14 +92,8 @@
                                     <p>Αδιάβροχες γαλότσες υψηλής ποιότητας για απαιτητικές αγροτικές εργασίες</p>
                                     <img src="images/PVC-boots.png" id="shopImg" 
                                     style="width: 50%; position: absolute;">
-                                    <button type="button" class="btn btn-dark" 
-                                    style="position: absolute;
-                                           margin-left: 49.8%;
-                                           margin-top: 34.5%">Προσθήκη στο Καλάθι</button>
-                                    <button type="button" class="btn btn-dark" 
-                                    style="position: absolute;
-                                           margin-left: 50%;
-                                           margin-top: 40%" onclick="playAgain()">επιστροφή στο βίντεο</button>
+                                    <button type="button" class="btn btn-dark btn-carousel btn-shop" >Προσθήκη στο Καλάθι</button>
+                                    <button type="button" class="btn btn-dark btn-carousel btn-back" onclick="playAgain()">επιστροφή στο βίντεο</button>
                                     <img src="images/rec.png" alt="" style="width:100%;">
                                   </div>
                                   <!-- 1 -->
@@ -136,14 +103,8 @@
                                     <p>Με αντικραδασμικό σύστημα & φρένο αλυσίδας</p>
                                     <img src="images/Chainsaw.png" id="shopImg" 
                                     style="width: 50%; position: absolute;">
-                                    <button type="button" class="btn btn-dark" 
-                                    style="position: absolute;
-                                           margin-left: 49.8%;
-                                           margin-top: 34.5%">Προσθήκη στο Καλάθι</button>
-                                    <button type="button" class="btn btn-dark" 
-                                    style="position: absolute;
-                                           margin-left: 50%;
-                                           margin-top: 40%" onclick="playAgain()">επιστροφή στο βίντεο</button>
+                                    <button type="button" class="btn btn-dark btn-carousel btn-shop">Προσθήκη στο Καλάθι</button>
+                                    <button type="button" class="btn btn-dark btn-carousel btn-back" onclick="playAgain()">επιστροφή στο βίντεο</button>
                                     <img src="images/rec.png" alt="" style="width:100%;">
                                   </div>
                                   <!-- 2 -->
@@ -153,14 +114,8 @@
                                     <p>Με 2 χρόνια εγγύηση</p>
                                     <img src="images/angle-grinder.png" id="shopImg" 
                                     style="width: 50%; position: absolute;">
-                                    <button type="button" class="btn btn-dark" 
-                                    style="position: absolute;
-                                           margin-left: 49.8%;
-                                           margin-top: 34.5%">Προσθήκη στο Καλάθι</button>
-                                    <button type="button" class="btn btn-dark" 
-                                    style="position: absolute;
-                                           margin-left: 50%;
-                                           margin-top: 40%" onclick="playAgain()">επιστροφή στο βίντεο</button>
+                                    <button type="button" class="btn btn-dark btn-carousel btn-shop">Προσθήκη στο Καλάθι</button>
+                                    <button type="button" class="btn btn-dark btn-carousel btn-back" onclick="playAgain()">επιστροφή στο βίντεο</button>
                                     <img src="images/rec.png" alt="" style="width:100%;">
                                   </div>
                                   <!-- 3 -->
@@ -170,14 +125,8 @@
                                     <p>Προλαμβάνει τη σκουριά & απομακρύνει την υγρασία</p>
                                     <img src="images/Lubricant-Q20.png" id="shopImg" 
                                     style="width: 50%; position: absolute;">
-                                    <button type="button" class="btn btn-dark" 
-                                    style="position: absolute;
-                                           margin-left: 49.8%;
-                                           margin-top: 34.5%">Προσθήκη στο Καλάθι</button>
-                                    <button type="button" class="btn btn-dark" 
-                                    style="position: absolute;
-                                           margin-left: 50%;
-                                           margin-top: 40%" onclick="playAgain()">επιστροφή στο βίντεο</button>
+                                    <button type="button" class="btn btn-dark btn-carousel btn-shop">Προσθήκη στο Καλάθι</button>
+                                    <button type="button" class="btn btn-dark btn-carousel btn-back" onclick="playAgain()">επιστροφή στο βίντεο</button>
                                     <img src="images/rec.png" alt="" style="width:100%;">
                                   </div>
                                   <!-- 4 -->
@@ -187,14 +136,8 @@
                                     <p>Ιδανική για σχίσιμο των ξύλων</p>
                                     <img src="images/axes.png" id="shopImg" 
                                     style="width: 50%; position: absolute;">
-                                    <button type="button" class="btn btn-dark" 
-                                    style="position: absolute;
-                                           margin-left: 49.8%;
-                                           margin-top: 34.5%">Προσθήκη στο Καλάθι</button>
-                                    <button type="button" class="btn btn-dark" 
-                                    style="position: absolute;
-                                           margin-left: 50%;
-                                           margin-top: 40%" onclick="playAgain()">επιστροφή στο βίντεο</button>
+                                    <button type="button" class="btn btn-dark btn-carousel btn-shop">Προσθήκη στο Καλάθι</button>
+                                    <button type="button" class="btn btn-dark btn-carousel btn-back" onclick="playAgain()">επιστροφή στο βίντεο</button>
                                     <img src="images/rec.png" alt="" style="width:100%;">
                                   </div>
                                   <!-- 5 -->
@@ -204,14 +147,8 @@
                                     <p>Με βαλβίδα υγραερίου & ανοξείδωτο περίβλημα</p>
                                     <img src="images/Warm-air-generator.png" id="shopImg" 
                                     style="width: 50%; position: absolute;">
-                                    <button type="button" class="btn btn-dark" 
-                                    style="position: absolute;
-                                           margin-left: 49.8%;
-                                           margin-top: 34.5%">Προσθήκη στο Καλάθι</button>
-                                    <button type="button" class="btn btn-dark" 
-                                    style="position: absolute;
-                                           margin-left: 50%;
-                                           margin-top: 40%" onclick="playAgain()">επιστροφή στο βίντεο</button>
+                                    <button type="button" class="btn btn-dark btn-carousel btn-shop">Προσθήκη στο Καλάθι</button>
+                                    <button type="button" class="btn btn-dark btn-carousel btn-back" onclick="playAgain()">επιστροφή στο βίντεο</button>
                                     <img src="images/rec.png" alt="" style="width:100%;">
                                   </div>
                                   <!-- 6 -->
@@ -221,14 +158,8 @@
                                     <p>Λειτουργεί με ρεύμα & με μπαταρία</p>
                                     <img src="images/Scale.png" id="shopImg" 
                                     style="width: 50%; position: absolute;">
-                                    <button type="button" class="btn btn-dark" 
-                                    style="position: absolute;
-                                           margin-left: 49.8%;
-                                           margin-top: 34.5%">Προσθήκη στο Καλάθι</button>
-                                    <button type="button" class="btn btn-dark" 
-                                    style="position: absolute;
-                                           margin-left: 50%;
-                                           margin-top: 40%" onclick="playAgain()">επιστροφή στο βίντεο</button>
+                                    <button type="button" class="btn btn-dark btn-carousel btn-shop">Προσθήκη στο Καλάθι</button>
+                                    <button type="button" class="btn btn-dark btn-carousel btn-back" onclick="playAgain()">επιστροφή στο βίντεο</button>
                                     <img src="images/rec.png" alt="" style="width:100%;">
                                   </div>
                                   <!-- 7 -->
@@ -238,14 +169,8 @@
                                     <p>Δύο χρόνια εγγύηση</p>
                                     <img src="images/Hammer-Drill.png" id="shopImg" 
                                     style="width: 50%; position: absolute;">
-                                    <button type="button" class="btn btn-dark" 
-                                    style="position: absolute;
-                                           margin-left: 49.8%;
-                                           margin-top: 34.5%">Προσθήκη στο Καλάθι</button>
-                                    <button type="button" class="btn btn-dark" 
-                                    style="position: absolute;
-                                           margin-left: 50%;
-                                           margin-top: 40%" onclick="playAgain()">επιστροφή στο βίντεο</button>
+                                    <button type="button" class="btn btn-dark btn-carousel btn-shop">Προσθήκη στο Καλάθι</button>
+                                    <button type="button" class="btn btn-dark btn-carousel btn-back" onclick="playAgain()">επιστροφή στο βίντεο</button>
                                     <img src="images/rec.png" alt="" style="width:100%;">
                                   </div>
                                 <!-- Left and right controls -->
@@ -501,6 +426,7 @@
     </script>
      
 
+</div>
 </div>
 
 </body>
