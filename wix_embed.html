@@ -50,8 +50,9 @@
 
 .loader1 {
   position: absolute;
-  display: inline;
+  display: none;
   z-index: 30;
+  cursor: pointer;
 }
 
 button {
@@ -143,6 +144,11 @@ ol.carousel-indicators li, ol.carousel-indicators li.active {
 .btn-carousel{
   font-size: 3vw;
   /* height: 8vh; */
+}
+.select-carousel{
+  font-size: 3vw;
+  color:white;
+  background-color: black;
 }
 /* .btn-shop{
   position: absolute;
@@ -277,7 +283,7 @@ div.clickEffect{
                                <div class="playButton" id="play" onclick="playDisplayPart()"></div>
                                 <!-- shop button function in JQuery -->
                                <div class="shopButton" id="shop"></div> 
-                               <div class="loader1" id="loader1" style="top:69%; left: 47%;" onclick=>
+                               <div class="loader1" id="loader1" style="top:69%; left: 47%;" onclick="playDisplayPart()">
                                    <div class="circle one"></div>
                                    <div class="circle two"></div>
                                    <div class="circle three"></div>
@@ -310,7 +316,7 @@ div.clickEffect{
                                     <li data-target="#Carousel" data-slide-to="6"></li>
                                     <li data-target="#Carousel" data-slide-to="7"></li>
                                   </ol>
-                              
+
                                   <!-- Wrapper for slides -->
                                   <div class="carousel-inner" style="position: relative">
                                     <!-- 0 PVC Boots-->
@@ -320,7 +326,14 @@ div.clickEffect{
                                       <p>Αδιάβροχες γαλότσες υψηλής ποιότητας για απαιτητικές αγροτικές εργασίες</p>
                                       <img src="https://static.wixstatic.com/media/d0505b_c15c06460ccd43b786a2952d971173cc~mv2.png" id="shopImg" 
                                       style="width: 50%; position: absolute;">
-                                      <button type="button" class="btn btn-dark btn-carousel btn-shop" id="590b26d8-6a1e-6749-1125-9c16db9cb57d" onclick="addToCart()">Προσθήκη στο Καλάθι</button>
+                                      <p style="top:16%;">select the size</p>
+                                      <select class="select-carousel" name="Size" style="position:absolute;top: 53%; left : 70%">
+                                        <option value="na" selected="selected">- select - &nbsp&nbsp </option>
+                                        <option value ="Small">Small</option>
+                                        <option value ="Medium">Medium</option>
+                                        <option value ="Large">Large</option>
+                                      </select>
+                                      <button type="button" class="btn btn-dark btn-carousel btn-shop" id="0c223e10-46e9-8e13-9749-b82897897cef" onclick="addToCart()">Προσθήκη στο Καλάθι</button>
                                       <button type="button" class="btn btn-dark btn-carousel btn-back" onclick="playAgain()">Επιστροφή στο Βίντεο</button>
                                       <img src="https://static.wixstatic.com/media/d0505b_d4ea305af5f2450c8eda5c5890d83541~mv2.png" alt="" style="width:100%;">
                                     </div>
@@ -331,7 +344,7 @@ div.clickEffect{
                                       <p>Με αντικραδασμικό σύστημα & φρένο αλυσίδας</p>
                                       <img src="https://static.wixstatic.com/media/d0505b_232dfd04a3f342a585722426fc4fa144~mv2.png" id="shopImg" 
                                       style="width: 50%; position: absolute;">
-                                      <button type="button" class="btn btn-dark btn-carousel btn-shop">Προσθήκη στο Καλάθι</button>
+                                      <button type="button" class="btn btn-dark btn-carousel btn-shop" id="a1f9f494-6496-d6a2-8075-4d77a4b3f504" onclick="addToCart()">Προσθήκη στο Καλάθι</button>
                                       <button type="button" class="btn btn-dark btn-carousel btn-back" onclick="playAgain()">Επιστροφή στο Βίντεο</button>
                                       <img src="https://static.wixstatic.com/media/d0505b_d4ea305af5f2450c8eda5c5890d83541~mv2.png" alt="" style="width:100%;">
                                     </div>
@@ -386,7 +399,7 @@ div.clickEffect{
                                       <p>Λειτουργεί με ρεύμα & με μπαταρία</p>
                                       <img src="https://static.wixstatic.com/media/d0505b_ec67757a9d8749969eb41fbfcad140d6~mv2.png" id="shopImg" 
                                       style="width: 50%; position: absolute;">
-                                      <button type="button" class="btn btn-dark btn-carousel btn-shop">Προσθήκη στο Καλάθι</button>
+                                      7<button type="button" class="btn btn-dark btn-carousel btn-shop">Προσθήκη στο Καλάθι</button>
                                       <button type="button" class="btn btn-dark btn-carousel btn-back" onclick="playAgain()">Επιστροφή στο Βίντεο</button>
                                       <img src="https://static.wixstatic.com/media/d0505b_d4ea305af5f2450c8eda5c5890d83541~mv2.png" alt="" style="width:100%;">
                                     </div>
@@ -416,7 +429,7 @@ div.clickEffect{
       </div>
   
         
-         <!-- Vimeo player script and SDK import -->
+      <!-- Vimeo player script and SDK import -->
       <script src="https://player.vimeo.com/api/player.js"></script>
       <script>
         //player setup
@@ -426,15 +439,14 @@ div.clickEffect{
         };
         var player = new Vimeo.Player('myVideo', options);
         player.setVolume(0);
-  
         document.getElementById("loader1").style.display = "none"; 
         document.getElementById("play").style.display = "none"; 
         document.getElementById("shop").style.display = "none";
   
-        var onPlay = function(data) {
-        };
+        // var onPlay = function(data) {
+        // };
   
-        player.on('bufferend', onPlay);
+        // player.on('bufferend', onPlay);
   
         player.on('play', function() {
           // console.log('Played the video');
@@ -449,7 +461,6 @@ div.clickEffect{
         var nextButtonClicked = false;
         var currentAt = -1;
         
-  
         //play button
         function playDisplayPart() {
           playButtonClicked = true;
@@ -477,8 +488,6 @@ div.clickEffect{
             showAllJumpButton();
             document.getElementById("shop").style.display = "inline";
           }
-  
-  
         };
         player.on('timeupdate',jumpToShopping);
   
@@ -534,8 +543,7 @@ div.clickEffect{
           hideAllJumpButton();
           })
         })
-  
-  
+
         //Επιστροφή στο Βίντεο from carousel
         function playAgain(){
           document.getElementById("Carousel").style.display = "none";
@@ -545,7 +553,6 @@ div.clickEffect{
           player.play();
         }
      
-  
         // jump between products
         function previousProduct(){
           player.getCurrentTime().then(function(seconds) {
@@ -604,8 +611,6 @@ div.clickEffect{
         }
         player.on('timeupdate', listenForJump);
   
-  
-  
         function getTimeIndex(jumpSecond, time){
           var timeIndex = -1;
           for(var index in jumpSecond){
@@ -625,14 +630,12 @@ div.clickEffect{
           for (var i = 0; i < allJump.length; i++) {
             allJump[i].style.display = 'none';
           }
-  
           var allRipple = document.getElementsByClassName('jumpToRipple');
           for (var i = 0; i < allRipple.length; i++) {
             allRipple[i].style.display = 'none';
           }
-          
-  
         }
+
         function showAllJumpButton(){
           var allJump = document.getElementsByClassName('jumpToButton');
           for (var i = 0; i < allJump.length; i++) {
@@ -644,16 +647,23 @@ div.clickEffect{
           // }
         }
 
-        
-
+        //Add product to cart
         function addToCart() {
           let product_id = event.srcElement.id;
-          let data = {}
+          let parent = event.srcElement.parentElement;
+          let data = {};
+          if(parent.getElementsByTagName("select")){
+            let select = parent.getElementsByTagName("select")[0];
+            let choices =  {};
+            choices[select.name] = select.value
+            data["choices"] = choices
+          }
           data["productId"] = product_id;
           data = JSON.stringify(data);
-          console.dir(data)
+          console.dir(data);
           window.parent.postMessage(data, "*");
       }
+
       </script>
        
   
