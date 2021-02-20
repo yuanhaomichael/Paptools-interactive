@@ -321,7 +321,7 @@ div.clickEffect{
                                   <div class="carousel-inner" style="position: relative">
                                     <!-- 0 PVC Boots-->
                                     <div class="item active">
-                                      <h4>Αδιάβροχη γαλότσα εργασίας Dunlop κνήμης (κοντή)</h4>
+                                      <h4><a href="https://www.paptools.gr/product-page/galotsa-gonatou" target="_blank" style="color: black;">Αδιάβροχη γαλότσα εργασίας Dunlop κνήμης (κοντή)</a></h4>
                                       <h5>€10,4</h5>
                                       <p>Αδιάβροχες γαλότσες υψηλής ποιότητας για απαιτητικές αγροτικές εργασίες</p>
                                       <img src="https://static.wixstatic.com/media/d0505b_c15c06460ccd43b786a2952d971173cc~mv2.png" id="shopImg" 
@@ -339,7 +339,7 @@ div.clickEffect{
                                     </div>
                                     <!-- 1 Chainsaw -->
                                     <div class="item">
-                                      <h4>Αλυσοπρίονο βενζίνης Einhell 2χρονο - με αλυσίδα & λάμα Oregon 35cm</h4>
+                                      <h4><a href="https://www.paptools.gr/product-page/alysopriono-einhell-4501872" target="_blank" style="color:black;">Αλυσοπρίονο βενζίνης Einhell 2χρονο - με αλυσίδα & λάμα Oregon 35cm</a></h4>
                                       <h5>€107,55</h5>
                                       <p>Με αντικραδασμικό σύστημα & φρένο αλυσίδας</p>
                                       <img src="https://static.wixstatic.com/media/d0505b_232dfd04a3f342a585722426fc4fa144~mv2.png" id="shopImg" 
@@ -652,7 +652,7 @@ div.clickEffect{
           let product_id = event.srcElement.id;
           let parent = event.srcElement.parentElement;
           let data = {};
-          if(parent.getElementsByTagName("select")){
+          if(parent.getElementsByTagName("select").length > 0){
             let select = parent.getElementsByTagName("select")[0];
             let choices =  {};
             choices[select.name] = select.value
@@ -660,7 +660,7 @@ div.clickEffect{
           }
           data["productId"] = product_id;
           data = JSON.stringify(data);
-          console.dir(data);
+          // console.dir(data);
           window.parent.postMessage(data, "*");
       }
 
